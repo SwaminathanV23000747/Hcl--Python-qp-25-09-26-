@@ -98,20 +98,113 @@ print(max_sales_product([-2, 3, -4]))
 ## 6. Customer Purchase History
 # An e-commerce application stores the product IDs purchased by a customer in chronological order. The same product may appear multiple times. The system needs to determine the longest sequence of consecutive purchases in which every product ID is unique.
 ```
+def count_target_transactions(transactions, target):
+    prefix_counts = {0: 1}
+    current_sum = 0
+    count = 0
+
+    for amount in transactions:
+        current_sum += amount
+
+        if (current_sum - target) in prefix_counts:
+            count += prefix_counts[current_sum - target]
+
+        prefix_counts[current_sum] = prefix_counts.get(current_sum, 0) + 1
+
+    return count
+
+
+transactions = [10, 20, -10, 30, -20, 10]
+target = 30
+print(count_target_transactions(transactions, target))
 ```
 ##  7. Bank Transaction Analysis
 # A bank stores transaction amounts for a customer's account. A continuous group of transactions may add up to a specific target amount. The auditing system needs to determine how many different continuous transaction groups produce exactly the specified amount.
 ```
+def count_target_transactions(transactions, target):
+    prefix_counts = {0: 1}
+    current_sum = 0
+    count = 0
+
+    for amount in transactions:
+        current_sum += amount
+
+        if (current_sum - target) in prefix_counts:
+            count += prefix_counts[current_sum - target]
+
+        prefix_counts[current_sum] = prefix_counts.get(current_sum, 0) + 1
+
+    return count
+
+
+transactions = [10, 20, -10, 30, -20, 10]
+target = 30
+print(count_target_transactions(transactions, target))
 ```
 ## 8. Employee Skill Grouping
 # A company receives a list of employee skill codes represented as strings. Employees having the same set of characters in their skill codes belong to the same skill category, even if the characters appear in a different order. The HR system needs to organize employees into appropriate skill groups.
 ```
+def group_skill_codes(skills):
+    groups = {}
+
+    for code in skills:
+        key = "".join(sorted(code))
+        if key not in groups:
+            groups[key] = []
+        groups[key].append(code)
+
+    return list(groups.values())
+
+
+skills = ["python", "typhon", "java", "vaja", "c"]
+print(group_skill_codes(skills))
 ```
 ## 9. Network Packet Analysis
 # A network monitoring system receives packet identifiers in chronological order. The system must determine the longest sequence of consecutive packets whose identifiers form a continuous numerical sequence, regardless of their original order in the incoming data.
 ```
+def longest_consecutive_packets(packets):
+    packet_set = set(packets)
+    max_length = 0
+
+    for packet in packet_set:
+        if (packet - 1) not in packet_set:
+            current_num = packet
+            current_length = 1
+
+            while (current_num + 1) in packet_set:
+                current_num += 1
+                current_length += 1
+
+            max_length = max(max_length, current_length)
+
+    return max_length
+
+
+packets = [100, 4, 200, 1, 3, 2]
+print(longest_consecutive_packets(packets))
 ```
 ## 10. Hospital Appointment Scheduling
 # A hospital receives appointment requests represented by starting and ending times. Some appointments overlap with each other. The scheduling system needs to combine overlapping appointment periods so that the final schedule contains only non-overlapping time ranges.
 ```
+def merge_appointments(appointments):
+    if not appointments:
+        return []
+
+    appointments.sort(key=lambda x: x[0])
+    merged = [appointments[0]]
+
+    for current in appointments[1:]:
+        last_start, last_end = merged[-1]
+        curr_start, curr_end = current
+
+        if curr_start <= last_end:
+            merged[-1] = (last_start, max(last_end, curr_end))
+        else:
+            merged.append(current)
+
+    return merged
+
+
+appointments = [(9, 11), (10, 12), (13, 15), (14, 16)]
+print(merge_appointments(appointments))
 ```
