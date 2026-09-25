@@ -94,7 +94,7 @@ def max_sales_product(sales):
 print(max_sales_product([2, 3, -2, 4]))       
 print(max_sales_product([-2, 0, -1]))
 print(max_sales_product([-2, 3, -4]))
-          
+ ```         
 ## 6. Customer Purchase History
 # An e-commerce application stores the product IDs purchased by a customer in chronological order. The same product may appear multiple times. The system needs to determine the longest sequence of consecutive purchases in which every product ID is unique.
 ```
