@@ -37,7 +37,7 @@ def max_discount(discounts):
 print(max_discount([3, -2, 5, -1, 4, -2]))
 ```
 ## 3. Rainwater Collection System
-#A city installs buildings of different heights along a straight road. During rainfall, water gets collected between taller buildings. The engineering team needs to calculate the total amount of water that can remain trapped after heavy rainfall based on the heights of the buildings.
+# A city installs buildings of different heights along a straight road. During rainfall, water gets collected between taller buildings. The engineering team needs to calculate the total amount of water that can remain trapped after heavy rainfall based on the heights of the buildings.
 ```
 def trap_water(height):
     left, right = 0, len(height) - 1
@@ -91,10 +91,10 @@ def max_sales_product(sales):
 
     return result
 
-print(max_sales_product([2, 3, -2, 4]))        # Output: 6
-print(max_sales_product([-2, 0, -1]))          # Output: 0
-print(max_sales_product([-2, 3, -4]))          # Output: 24
-```
+print(max_sales_product([2, 3, -2, 4]))       
+print(max_sales_product([-2, 0, -1]))
+print(max_sales_product([-2, 3, -4]))
+          
 ## 6. Customer Purchase History
 # An e-commerce application stores the product IDs purchased by a customer in chronological order. The same product may appear multiple times. The system needs to determine the longest sequence of consecutive purchases in which every product ID is unique.
 ```
