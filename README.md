@@ -96,4 +96,22 @@ print(max_sales_product([-2, 0, -1]))          # Output: 0
 print(max_sales_product([-2, 3, -4]))          # Output: 24
 ```
 ## 6. Customer Purchase History
-# 
+# An e-commerce application stores the product IDs purchased by a customer in chronological order. The same product may appear multiple times. The system needs to determine the longest sequence of consecutive purchases in which every product ID is unique.
+```
+```
+##  7. Bank Transaction Analysis
+# A bank stores transaction amounts for a customer's account. A continuous group of transactions may add up to a specific target amount. The auditing system needs to determine how many different continuous transaction groups produce exactly the specified amount.
+```
+```
+## 8. Employee Skill Grouping
+# A company receives a list of employee skill codes represented as strings. Employees having the same set of characters in their skill codes belong to the same skill category, even if the characters appear in a different order. The HR system needs to organize employees into appropriate skill groups.
+```
+```
+## 9. Network Packet Analysis
+# A network monitoring system receives packet identifiers in chronological order. The system must determine the longest sequence of consecutive packets whose identifiers form a continuous numerical sequence, regardless of their original order in the incoming data.
+```
+```
+## 10. Hospital Appointment Scheduling
+# A hospital receives appointment requests represented by starting and ending times. Some appointments overlap with each other. The scheduling system needs to combine overlapping appointment periods so that the final schedule contains only non-overlapping time ranges.
+```
+```
